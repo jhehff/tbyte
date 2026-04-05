@@ -1,13 +1,16 @@
-name: Repo Pages Updater
+name: Deploy Hugo site to GitHub Pages
 
 on:
   push:
     branches:
       - main
 
+  workflow_dispatch:
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     permissions:
       contents: read
       pages: write
@@ -16,17 +19,36 @@ jobs:
     environment:
       name: github-pages
 
+    concurrency:
+      group: "pages"
+      cancel-in-progress: false
+
     steps:
-      - name: Checkout
+      - name: Checkout repository (with theme submodules)
         uses: actions/checkout@v5
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build site
+        run: |
+          hugo \
+            --minify \
+            --baseURL "https://jhehff.github.io/gh-deployment-workflow/"
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload Pages artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ./public
 
       - name: Deploy to GitHub Pages
         id: deployment
