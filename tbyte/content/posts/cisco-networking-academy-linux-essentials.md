@@ -12,5 +12,3 @@ The course is structured in 18 modules and progressively gets harder or more com
 There are a number of exams that are MCQ based & have unlimited retries - not bad for some of the more complex stuff.
 
 I finished this course in about 6 hours, rather than the advertised 70 & got a badge to add to linked in. I think it was a good use of my time and it has motivated me to continue learning more about Linux (and use it in projects like tbyte).
-
-![image info](./images/Linux_Essentials_certificate.pdf)
