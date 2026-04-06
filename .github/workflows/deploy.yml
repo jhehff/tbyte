@@ -41,7 +41,7 @@ jobs:
         run: |
           hugo \
             --minify \
-            --baseURL "https://jhehff.github.io/gh-deployment-workflow/"
+            --baseURL "https://jhehff.github.io/tbyte/"
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
