@@ -1,7 +1,6 @@
 ---
 title: Cisco Netowrking Academy - Linux Essentials
 description: My review of the NDG Linux Essentials course offered through Cisco Netowrking Academy
-date: 06-04-2026
 ---
 
 # Enough to navigate the terminal
