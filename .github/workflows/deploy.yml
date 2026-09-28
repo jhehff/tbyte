@@ -42,7 +42,7 @@ jobs:
         run: |
           hugo \
             --minify \
-            --baseURL "https://jhehff.github.io/tbyte/"
+            --baseURL "https://jhehff.github.io"
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v4
